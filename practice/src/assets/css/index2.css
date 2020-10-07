@@ -1,0 +1,130 @@
+.content {
+  width: 90%;
+  margin: 0 auto;
+  background-color: antiquewhite;
+}
+
+.gallery span, .gallery i {
+  line-height: 60px;
+  vertical-align: middle;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #233;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #ff5600;
+}
+
+ul {
+  list-style: none;
+}
+
+.lunbo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.lunbo img {
+  width: inherit;
+  transform: translateY(-100px);
+  transition: all 0.4s;
+}
+.lunbo .banner_circle {
+  position: absolute;
+  display: grid;
+  bottom: 10px;
+  grid-template-columns: repeat(6, 10px);
+  grid-template-rows: 10px;
+  grid-gap: 0 12px;
+  left: 50%;
+  transform: translateX(-60px);
+  cursor: pointer;
+  color: #fff;
+}
+.lunbo .banner_circle li {
+  border: 1px solid #333;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 10px;
+}
+.lunbo .banner_circle li.active {
+  background-color: #5bc441;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.gallery i {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 36px;
+}
+.gallery span {
+  margin-left: 10px;
+}
+
+.nav_bottom {
+  width: 90%;
+  margin: 20px auto;
+}
+.nav_bottom ul {
+  display: grid;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+.nav_bottom ul li {
+  line-height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  .content .gallery {
+    width: 25%;
+  }
+
+  .container {
+    width: 100%;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #app {
+    margin-top: 0;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 60px 500px;
+  }
+  .content h1 {
+    grid-column: 1/9;
+    text-align: center;
+  }
+  .content .container {
+    display: grid;
+    grid-template-rows: 300px 200px;
+    grid-column: 1/9;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=index2.css.map */

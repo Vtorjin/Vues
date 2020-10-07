@@ -1,0 +1,209 @@
+@charset 'utf-8';
+@import './variable';
+@import './mixin';
+@import './placeholder';
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+// 初始化样式
+a {
+  text-decoration: none;
+  color: #233;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $themeColor
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+//首页样式
+.content {
+  @extend %content;
+
+}
+
+
+// 轮播图
+.banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    width: inherit;
+    transition: all 0.4s;
+  }
+
+  .banner_circle {
+    position: absolute;
+    display: grid;
+    bottom: 10px;
+    grid-template-columns: repeat(6, 10px);
+    grid-template-rows: 10px;
+    grid-gap: 0 12px;
+    left: 50%;
+    transform: translateX(-60px);
+    cursor: pointer;
+    color: #fff;
+
+    li {
+      border: 1px solid #333;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 10px;
+
+      &.active {
+        background-color: $background;
+      }
+    }
+  }
+
+
+}
+
+//首页导航
+.gallery {
+  display: flex;
+  justify-content: center;
+
+  i {
+    @extend %a;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 36px;
+  }
+
+  span {
+    @extend %a;
+    margin-left: 10px;
+  }
+
+  cursor: pointer;
+}
+
+// 首页导航内容展示区
+.shouyeList {
+  height: 240px;
+  overflow-y: scroll;
+  margin-top: 30px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 100px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    height: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 6px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(136, 126, 126);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+//底部导航
+.nav_bottom {
+  width: 90%;
+  margin: 20px auto;
+
+  ul {
+    display: grid;
+    list-style: none;
+    padding-left: 0;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+
+    li {
+      line-height: 40px;
+    }
+  }
+}
+
+// 查看详情
+button {
+  padding: 8px 16px;
+  background-color: rgba(131, 175, 150, 0.863);
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+//小于768的设备
+@media screen and (max-width:768px) {
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .gallery {
+      width: 25%;
+    }
+
+
+  }
+
+  .container {
+    width: 90%;
+    height: 400px;
+
+    .banner img {
+      height: 300px;
+    }
+  }
+
+
+}
+
+
+// 大于768px的设备
+@media screen and (min-width:768px) {
+  #app {
+    margin-top: 0;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 60px 460px;
+
+    h1 {
+      grid-column: 1/9;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: 200px 300px;
+      grid-column: 1 / 9;
+      overflow: hidden;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// .nav-bottom {}
