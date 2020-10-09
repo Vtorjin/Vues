@@ -14,7 +14,7 @@
               },
             }"
           >
-            <img :src="item.src" alt="图片" />
+            <img  v-lazy="item.src" alt="图片" />
             <label>
               <b>折扣价:{{ sale(item.price) }}</b>
               <span
@@ -65,8 +65,6 @@ ul {
 label {
   display: grid;
   place-items: center;
-  // grid-template-columns: 100px;
-  // background-color: khaki;
   b {
     color: red;
   }

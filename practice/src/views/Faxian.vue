@@ -15,39 +15,18 @@ export default {
   },
   data() {
     return {
-      img: [
-        {
-          src: require("../assets/img/banner/faxian/1.jpg"),
-          title: "图片1",
-          id: 12,
-        },
-        {
-          src: require("../assets/img/banner/faxian/2.jpg"),
-          title: "图片1",
-          id: 11,
-        },
-        {
-          src: require("../assets/img/banner/faxian/3.jpg"),
-          title: "图片1",
-          id: 10,
-        },
-        {
-          src: require("../assets/img/banner/faxian/4.jpg"),
-          title: "图片1",
-          id: 9,
-        },
-        {
-          src: require("../assets/img/banner/faxian/5.jpg"),
-          title: "图片1",
-          id: 8,
-        },
-        {
-          src: require("../assets/img/banner/faxian/6.jpg"),
-          title: "图片1",
-          id: 7,
-        },
-      ],
+      img: [],
     };
+  },
+  methods: {
+    getList() {
+      this.$http.get("/mi/json/app/faxianImg.json").then((res) => {
+        this.img = res.data.img;
+      });
+    },
+  },
+  mounted() {
+    this.getList();
   },
 };
 </script>

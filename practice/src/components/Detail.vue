@@ -7,10 +7,12 @@
     <div class="details">
       <img :src="$route.params.src" alt="图片" />
       <p>
+        <span>名称：{{ $route.params.info }}</span><br/>
         <b>原价为{{$route.params.price }}</b>
-        <span> 现在大甩卖 </span>
+     
       </p>
-      <p>{{ $route.params.info }}</p>
+      <p><span>现在只要。。。。。。</span></p>
+       <blockquote>更多详情：请后台小哥给个介绍吧</blockquote>
     </div>
   </div>
 </template>
@@ -52,7 +54,8 @@ export default {
     margin: 0 auto;
 
     img {
-      width:50%;
+      width:300px;
+      height:200px;
     }
     b {
       color: red;

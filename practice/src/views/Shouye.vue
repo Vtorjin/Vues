@@ -22,8 +22,6 @@
         <router-view></router-view>
       </keep-alive>
     </div>
-
-    
   </div>
 </template>
 
@@ -121,11 +119,12 @@ export default {
   },
   methods: {
     getList() {
-      this.$http.get("/mi/json/1.json").then((res) => {});
+      this.$http.get("/mi/json/app/food.json").then((res) => {
+      });
     },
   },
   mounted() {
-    this.getList();
+
   },
 };
 </script>
